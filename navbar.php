@@ -13,7 +13,8 @@
     <ul class="nav navbar-nav navbar-right">
 
       <?php
-          if(isset($_SESSION['username']) && isset($_SESSION['password'])){
+          if(isset($_SESSION['username'])){
+            echo '<li><a href="profileMember.php"><span class="glyphicon glyphicon-user"></span> Profile</a></li>';
             echo '<li><a href="backend/logoutMember.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>';
           }else{
             echo '<li><a href="loginMember.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';

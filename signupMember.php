@@ -1,3 +1,12 @@
+<?php  
+  session_start();
+
+  if(isset($_SESSION['username']) && isset($_SESSION['user_id'])){
+    alert('Cannot Sign In!');
+    header('Location:index.php');
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +23,7 @@
     <center>
     	<h3>Create Account</h3>
     	<br>
-	    <form action="bEnd/member_signUp.php" method="POST">
+	    <form action="backend/model_member.php" method="POST">
         <input type="text" name="fname" placeholder="First Name" required/><br><br>
         <input type="text" name="lname" placeholder="Last Name" required/><br><br>
         <input type="text" name="contact" placeholder="Contact Number" required/><br><br>
@@ -28,7 +37,7 @@
         <input type="text" name="username" placeholder="Username" required/><br><br>
         <input type="text" name="password" placeholder="Password" required/><br><br>  
         <br><br>
-        <input type="submit">
+        <input type="submit" name="msg" value="signup">
       </form>
     </center>
   </div>

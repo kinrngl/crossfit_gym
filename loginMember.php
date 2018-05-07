@@ -1,8 +1,7 @@
-<?php 
-  include('C:\xampp2\htdocs\crossfitGym\backend\model_member.php'); 
+<?php  
   session_start();
 
-  if(isset($_SESSION['username']) && isset($_SESSION['password'])){
+  if(isset($_SESSION['username']) && isset($_SESSION['user_id'])){
     header('Location:index.php');
   }
 ?>
@@ -23,7 +22,7 @@
     <center>
     	<h3>Welcome to Crossfit Gym</h3>
     	<br>
-	    <form action="" method="POST">
+	    <form action="backend/model_member.php" method="POST">
 	    	<input type="text" name="username" placeholder="Username" required/><br><br>
 	    	<input type="password" name="password" placeholder="Password" required/><br><br>
 
